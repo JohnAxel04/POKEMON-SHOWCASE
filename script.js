@@ -42,8 +42,10 @@ const move4Power = document.getElementById("move4Power");
 const move4Accuracy = document.getElementById("move4Accuracy");
 const move4PP = document.getElementById("move4PP");
 const move4Class = document.getElementById("move4Class");
+//buttom
+const addPokemon = document.getElementById("addPokemon");
 
-
+let select = null;
 
 async function getFetch(){
     try{
@@ -54,6 +56,8 @@ async function getFetch(){
         const data = await response.json();
 
         mainName.textContent = data.name;
+
+        select = data.name;
 
         mainId.textContent = data.id;
 
@@ -127,6 +131,11 @@ async function getFetch(){
         move4Power.textContent = moveUrl4.power;
         move4Accuracy.textContent = moveUrl4.accuracy;
         move4Class.textContent = moveUrl4.damage_class.name;
+        alert(select);
+
+        // addPokemon.addEventListener("click",() => {
+
+        // })
     }
     catch(Error){
         console.log(Error)
