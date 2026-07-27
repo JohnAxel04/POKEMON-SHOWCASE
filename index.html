@@ -11,52 +11,52 @@
         <div class="box" id="box1">
             <h1>Pokemon Details</h1>
             <div id="left1">
-                <p>Name</p>
+                <p>Name:</p>
                 <p id="mainName"></p>
             </div>
             <div id="left2">
-                <p>ID</p>
+                <p>ID:</p>
                 <p id="mainId"></p>
             </div>
             <div id="left3">
-                <p>Type</p>
+                <p>Type:</p>
                 <p  id="mainType"></p>
             </div>
             <div id="left4">
-                <p>Ability</p>
+                <p>abilities:</p>
                 <p  id="mainAbility"></p>
             </div>
             <div id="left5">
-                <p>Height</p>
+                <p>Height:</p>
                 <p  id="mainHeight"></p>
             </div>
             <div id="left6">
-                <p>Weight</p>
+                <p>Weight:</p>
                 <p id="mainWeight"></p>
             </div>
             <h1>Stats</h1>
             <div id="left7">
-                <p>HP</p>
+                <p>HP:</p>
                 <p id="mainHp"></p>
             </div>
             <div id="left8">
-                <p>Attack</p>
+                <p>Attack:</p>
                 <p id="mainAttack"></p>
             </div>
             <div id="left9">
-                <p>Defense</p>
+                <p>Defense:</p>
                 <p id="mainDef"></p>
             </div>
             <div id="left10">
-                <p>Sp. Atk</p>
+                <p>Sp. Atk:</p>
                 <p id="mainSpatk"></p>
             </div>
             <div id="left11">
-                <p>Sp. Def</p>
+                <p>Sp. Def:</p>
                 <p id="mainSpdef"></p>
             </div>
             <div id="left12">
-                <p>Speed</p>
+                <p>Speed:</p>
                 <p id="mainSpeed"></p>
             </div>
 
@@ -66,16 +66,134 @@
                 <img src="" alt="" style="display: none;" id="mainImg">
             </div>
             <div id="box2btn">
-                <button>Random Pokemon</button>
+                <button onclick="getFetch()">Random Pokemon</button>
             </div>
         </div>
         <div class="box" id="box3">
             <h1>Current Moves Set</h1>
-            <div>skill1</div>
-            <div>skill2</div>
-            <div>skill3</div>
-            <div>skill4</div>
+            <div id="move1">
+                <h3 id="move1name">Move 1</h3>
+                <div id="move1inside">
+                    <div id="move1innesttop">
+                        <div>
+                            <p>Type:</p>
+                            <p id="move1Type">??</p>
+                        </div>
+                        <div>
+                            <p>Power:</p>
+                            <p id="move1Power">??</p>
+                        </div>
+                        <div>
+                            <p>Accuracy:</p>
+                            <p id="move1Accuracy">??</p>
+                        </div>
+                        
+                    </div>
+                    <div id="move1innestbottom">
+                        <div>
+                            <p>PP:</p>
+                            <p id="move1PP">??</p>
+                        </div>
+                        <div>
+                            <p>Class:</p>
+                            <p id="move1Class">??</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div id="move2">
+                <h3 id="move2name">Move 2</h3>
+                <div id="move2inside">
+                    <div id="move2innesttop">
+                        <div>
+                            <p>Type:</p>
+                            <p id="move2Type">??</p>
+                        </div>
+                        <div>
+                            <p>Power:</p>
+                            <p id="move2Power">??</p>
+                        </div>
+                        <div>
+                            <p>Accuracy:</p>
+                            <p id="move2Accuracy">??</p>
+                        </div>
+                    </div>
+                    <div id="move2innestbottom">
+                        <div>
+                            <p>PP:</p>
+                            <p id="move2PP">??</p>
+                        </div>
+                        <div>
+                            <p>Class:</p>
+                            <p id="move2Class">??</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="move3">
+                <h3 id="move3name">Move 3</h3>
+                <div id="move3inside">
+                    <div id="move3innesttop">
+                        <div>
+                            <p>Type:</p>
+                            <p id="move3Type">??</p>
+                        </div>
+                        <div>
+                            <p>Power:</p>
+                            <p id="move3Power">??</p>
+                        </div>
+                        <div>
+                            <p>Accuracy:</p>
+                            <p id="move3Accuracy">??</p>
+                        </div>
+                    </div>
+                    <div id="move3innestbottom">
+                        <div>
+                            <p>PP:</p>
+                            <p id="move3PP">??</p>
+                        </div>
+                        <div>
+                            <p>Class:</p>
+                            <p id="move3Class">??</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="move4">
+                <h3 id="move4name">Move 4</h3>
+                <div id="move4inside">
+                    <div id="move4innesttop">
+                        <div>
+                            <p>Type:</p>
+                            <p id="move4Type">??</p>
+                        </div>
+                        <div>
+                            <p>Power:</p>
+                            <p id="move4Power">??</p>
+                        </div>
+                        <div>
+                            <p>Accuracy:</p>
+                            <p id="move4Accuracy">??</p>
+                        </div>
+                    </div>
+                    <div id="move4innestbottom">
+                        <div>
+                            <p>PP:</p>
+                            <p id="move4PP">??</p>
+                        </div>
+                        <div>
+                            <p>Class:</p>
+                            <p id="move4Class">??</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
         <div class="box" id="box4">
             <div id="Pokemon1">
                 <div id="Pokemon1Img"></div>

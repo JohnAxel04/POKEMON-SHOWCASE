@@ -12,6 +12,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: minmax(250px,300px) 1fr minmax(250px,300px);
+    grid-template-rows: 78% 22%;
     grid-template-areas:"left center  right"
                         "bottom bottom  bottom";
     gap: 5px;
@@ -24,6 +25,10 @@
     padding: 10px;
     gap: 5px;
 }
+#box1 div{
+    display: flex;
+    gap: 5px;
+}
 #box2{
     grid-area: center;
     display: flex;
@@ -34,10 +39,69 @@
     padding: 10px;
     gap: 10px;
 }
-#box3 div{
+
+#move1{
     margin-top: 2%;
     height: 22%;
     border: solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+#move1inside{
+    
+    display: flex;
+}
+#move1inside div{
+    width: 100%;
+}
+#move2{
+    margin-top: 2%;
+    height: 22%;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+#move2inside{
+    display: flex;
+}
+#move2inside div{
+    width: 100%;
+}
+#move3{
+    margin-top: 2%;
+    height: 22%;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+#move3inside{
+    
+    display: flex;
+}
+#move3inside div{
+    width: 100%;
+}
+#move4{
+    margin-top: 2%;
+    height: 22%;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+#move4inside{
+    
+    display: flex;
+}
+#move4inside div{
+    width: 100%;
 }
 #box4{
     grid-area: bottom;
@@ -66,7 +130,7 @@
     border: none;
     outline: none;
     border-radius: 10px;
-    background-color: grey;
+    background-color: red;
     font-size: 18px;
 }
 #Pokemon1Img{
@@ -129,4 +193,48 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#mainImg{
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+}
+#imgbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+#move1innesttop div{
+    display: flex;
+    gap: 3px;
+}
+#move2innesttop div{
+    display: flex;
+    gap: 3px;
+}
+#move3innesttop div{
+    display: flex;
+    gap: 3px;
+}
+#move4innesttop div{
+    display: flex;
+    gap: 3px;
+}
+#move1innestbottom div{
+    display: flex;
+    gap: 3px;
+}
+#move2innestbottom div{
+    display: flex;
+    gap: 3px;
+}
+#move3innestbottom div{
+    display: flex;
+    gap: 3px;
+}
+#move4innestbottom div{
+    display: flex;
+    gap: 3px;
 }
