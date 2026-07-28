@@ -45,6 +45,41 @@ const move4Class = document.getElementById("move4Class");
 //buttom
 const addPokemon = document.getElementById("addPokemon");
 
+//slot
+const mainslotbtn = document.getElementById("mainslotbtn");
+//pokeball
+const slotbtn1 = document.getElementById("slotbtn1");
+const slotbtn2 = document.getElementById("slotbtn2");
+const slotbtn3 = document.getElementById("slotbtn3");
+const slotbtn4 = document.getElementById("slotbtn4");
+const slotbtn5 = document.getElementById("slotbtn5");
+const slotbtn6 = document.getElementById("slotbtn6");
+
+//slotshowcase
+const Pokemon1Imgs = document.getElementById("Pokemon1Imgs");
+const Pokemon2Imgs = document.getElementById("Pokemon2Imgs");
+const Pokemon3Imgs = document.getElementById("Pokemon3Imgs");
+const Pokemon4Imgs = document.getElementById("Pokemon4Imgs");
+const Pokemon5Imgs = document.getElementById("Pokemon5Imgs");
+const Pokemon6Imgs = document.getElementById("Pokemon6Imgs");
+
+const Pokemon1Name = document.getElementById("Pokemon1Name");
+const Pokemon2Name = document.getElementById("Pokemon2Name");
+const Pokemon3Name = document.getElementById("Pokemon3Name");
+const Pokemon4Name = document.getElementById("Pokemon4Name");
+const Pokemon5Name = document.getElementById("Pokemon5Name");
+const Pokemon6Name = document.getElementById("Pokemon6Name");
+
+//pokeball img
+const pokeballimg1 = document.getElementById("pokeballimg1");
+const pokeballimg2 = document.getElementById("pokeballimg2");
+const pokeballimg3 = document.getElementById("pokeballimg3");
+const pokeballimg4 = document.getElementById("pokeballimg4");
+const pokeballimg5 = document.getElementById("pokeballimg5");
+const pokeballimg6 = document.getElementById("pokeballimg6");
+
+let selectedPokemon = []
+let slotT = true;
 let select = null;
 
 async function getFetch(){
@@ -57,7 +92,7 @@ async function getFetch(){
 
         mainName.textContent = data.name;
 
-        select = data.name;
+        select = myrandom;
 
         mainId.textContent = data.id;
 
@@ -95,8 +130,8 @@ async function getFetch(){
         move1name.textContent = moveUrl.name;
         move1PP.textContent = moveUrl.pp;
         move1Type.textContent = moveUrl.type.name;
-        move1Power.textContent = moveUrl.power;
-        move1Accuracy.textContent = moveUrl.accuracy;
+        move1Power.textContent = moveUrl.power  ?? "-";
+        move1Accuracy.textContent = moveUrl.accuracy  ?? "-";
         move1Class.textContent = moveUrl.damage_class.name;
 
         const moveInfo2 = data.moves[1].move.url;
@@ -106,8 +141,8 @@ async function getFetch(){
         move2name.textContent = moveUrl2.name;
         move2PP.textContent = moveUrl2.pp;
         move2Type.textContent = moveUrl2.type.name;
-        move2Power.textContent = moveUrl2.power;
-        move2Accuracy.textContent = moveUrl2.accuracy;
+        move2Power.textContent = moveUrl2.power  ?? "-";
+        move2Accuracy.textContent = moveUrl2.accuracy  ?? "-";
         move2Class.textContent = moveUrl2.damage_class.name;
 
         const moveInfo3 = data.moves[2].move.url;
@@ -117,8 +152,8 @@ async function getFetch(){
         move3name.textContent = moveUrl3.name;
         move3PP.textContent = moveUrl3.pp;
         move3Type.textContent = moveUrl3.type.name;
-        move3Power.textContent = moveUrl3.power;
-        move3Accuracy.textContent = moveUrl3.accuracy;
+        move3Power.textContent = moveUrl3.power  ?? "-";
+        move3Accuracy.textContent = moveUrl3.accuracy  ?? "-";
         move3Class.textContent = moveUrl3.damage_class.name;
 
         const moveInfo4 = data.moves[3].move.url;
@@ -128,16 +163,90 @@ async function getFetch(){
         move4name.textContent = moveUrl4.name;
         move4PP.textContent = moveUrl4.pp;
         move4Type.textContent = moveUrl4.type.name;
-        move4Power.textContent = moveUrl4.power;
-        move4Accuracy.textContent = moveUrl4.accuracy;
+        move4Power.textContent = moveUrl4.power ?? "-";
+        move4Accuracy.textContent = moveUrl4.accuracy ?? "-";
         move4Class.textContent = moveUrl4.damage_class.name;
-        alert(select);
-
-        // addPokemon.addEventListener("click",() => {
-
-        // })
+        
     }
     catch(Error){
         console.log(Error)
     }
+}
+addPokemon.addEventListener("click",() => {
+    if(select == null){
+        alert("Select first to add Pokemon")
+        return
+    }
+    else if(slotT){
+        mainslotbtn.style.display = "flex";
+        slotT = false;
+        fetchAdd()
+    }
+    else{alert("error")};
+})
+
+async function fetchAdd(){
+    try{
+        const fetchSelect = await fetch(`https://pokeapi.co/api/v2/pokemon/${select}`);
+        const selectedData = await fetchSelect.json();
+        slotbtn1.addEventListener("click",() => {
+            mainslotbtn.style.display = "none";
+            slotT = true;
+            Pokemon1Name.textContent = selectedData.name;
+            Pokemon1Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
+            Pokemon1Imgs.style.display = "block";
+            pokeballimg1.src = selectedData.sprites.other["official-artwork"].front_default;
+            pokeballimg1.style.display = "block";
+            
+            select = null;
+        },{once: true});
+        
+        slotbtn2.addEventListener("click",() => {
+            mainslotbtn.style.display = "none";
+            slotT = true;
+            Pokemon2Name.textContent = selectedData.name;
+            Pokemon2Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
+            Pokemon2Imgs.style.display = "block";
+            select = null;
+        },{once: true});
+
+        slotbtn3.addEventListener("click",() => {
+            mainslotbtn.style.display = "none";
+            slotT = true;
+            Pokemon3Name.textContent = selectedData.name;
+            Pokemon3Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
+            Pokemon3Imgs.style.display = "block";
+            select = null;
+        },{once: true});
+
+        slotbtn4.addEventListener("click",() => {
+            mainslotbtn.style.display = "none";
+            slotT = true;
+            Pokemon4Name.textContent = selectedData.name;
+            Pokemon4Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
+            Pokemon4Imgs.style.display = "block";
+            select = null;
+        },{once: true});
+
+        slotbtn5.addEventListener("click",() => {
+            mainslotbtn.style.display = "none";
+            slotT = true;
+            Pokemon5Name.textContent = selectedData.name;
+            Pokemon5Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
+            Pokemon5Imgs.style.display = "block";
+            select = null;
+        },{once: true});
+
+        slotbtn6.addEventListener("click",() => {
+            mainslotbtn.style.display = "none";
+            slotT = true;
+            Pokemon6Name.textContent = selectedData.name;
+            Pokemon6Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
+            Pokemon6Imgs.style.display = "block";
+            
+
+            select = null;
+        },{once: true});
+    }
+    catch(Error){console.log(Error)};
 }

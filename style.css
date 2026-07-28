@@ -24,6 +24,7 @@
     flex-direction: column;
     padding: 10px;
     gap: 5px;
+    overflow-y: auto;
 }
 #box1 div{
     display: flex;
@@ -38,28 +39,28 @@
     grid-area: right;
     padding: 10px;
     gap: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.themoves{
+    height: 100%;
+    border: solid;
 }
 
 #move1{
-    margin-top: 2%;
-    height: 22%;
-    border: solid;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
 }
 #move1inside{
-    
     display: flex;
 }
 #move1inside div{
     width: 100%;
 }
 #move2{
-    margin-top: 2%;
-    height: 22%;
-    border: solid;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -72,9 +73,6 @@
     width: 100%;
 }
 #move3{
-    margin-top: 2%;
-    height: 22%;
-    border: solid;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -88,16 +86,13 @@
     width: 100%;
 }
 #move4{
-    margin-top: 2%;
-    height: 22%;
-    border: solid;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
 }
+
 #move4inside{
-    
     display: flex;
 }
 #move4inside div{
@@ -244,7 +239,7 @@
     height: 100vh;
     position: absolute;
     top: 0;
-    display: flex;
+    display: none;
     justify-content: center;
 }
 #slotsbutton{
@@ -280,8 +275,8 @@
     flex-direction: column;
     overflow: hidden;
     border: 3px solid #555;
-
 }
+
 #slotbtn1 div{
     width: 100%;
 }
@@ -298,7 +293,6 @@
     position: relative;
 }
 #slotbtn1 div:nth-child(3) ul{
-    position: absolute;
     background-color: black;
     width: 22%;
     height: 230%;
@@ -307,6 +301,7 @@
     justify-content: center;
     align-items: center;
     padding: 3%;
+    position: relative;
 }
 #slotbtn1 div:nth-child(3) ul li{
     width: 100%;
@@ -317,6 +312,7 @@
 #slotbtn1 div:last-child{
     background-color: white;
     height: 45%;
+
 }
 
 #slotbtn2{
@@ -538,3 +534,35 @@
     background-color: white;
     height: 45%;
 }
+
+#Pokemon1Imgs{
+    width: 100%;
+    height: 100%;
+}
+#Pokemon2Imgs{
+    width: 100%;
+    height: 100%;
+}
+#Pokemon3Imgs{
+    width: 100%;
+    height: 100%;
+}
+#Pokemon4Imgs{
+    width: 100%;
+    height: 100%;
+}
+#Pokemon5Imgs{
+    width: 100%;
+    height: 100%;
+}
+#Pokemon6Imgs{
+    width: 100%;
+    height: 100%;
+}
+/* #pokeballimg1{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+} */
