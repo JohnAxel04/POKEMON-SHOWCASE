@@ -250,319 +250,85 @@
     flex-direction: column;
     gap: 25px;
 }
-#slotsbutton div{
-    height: 100%;
+#slotsbuttontop,#slotsbuttonbottom{
     height: 100%;
     display: flex;
     gap: 30px;
 }
 #slotsbuttontop button{
     width: 100%;
-    height: 100%;
     border-radius: 50%;
     border: none;
     outline: none;
 }
 #slotsbuttonbottom button{
     width: 100%;
-    height: 100%;
     border-radius: 50%;
     border: none;
     outline: none;
 }
-#slotbtn1{
+
+.slotbtnclass{
     display: flex;
     flex-direction: column;
     overflow: hidden;
     border: 3px solid #555;
-}
-
-#slotbtn1 div{
-    width: 100%;
-}
-#slotbtn1 div:first-child{
-    background-color: #e3350d;
-    height: 45%;
-}
-#slotbtn1 div:nth-child(3){
-    background-color: black;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-}
-#slotbtn1 div:nth-child(3) ul{
-    background-color: black;
-    width: 22%;
-    height: 230%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
-    position: relative;
-}
-#slotbtn1 div:nth-child(3) ul li{
-    width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background-color: white;
 }
-#slotbtn1 div:last-child{
-    background-color: white;
-    height: 45%;
-
-}
-
-#slotbtn2{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 3px solid #555;
-
-}
-#slotbtn2 div{
-    width: 100%;
-}
-#slotbtn2 div:first-child{
+.pokeballTops{
     background-color: #e3350d;
+    width: 100%;
     height: 45%;
+    position: relative;
+    z-index: 0;
 }
-#slotbtn2 div:nth-child(3){
+.pokeballMiddle{
     background-color: black;
-    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 10%;
+    z-index: 22;
 }
-#slotbtn2 div:nth-child(3) ul{
+.pokeballMiddle ul{
     position: absolute;
     background-color: black;
-    width: 22%;
-    height: 230%;
+    width: 20%;
+    height: 200%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3%;
+    z-index: 54;
 }
-#slotbtn2 div:nth-child(3) ul li{
+.pokeballMiddle ul li{
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: white;
-}
-#slotbtn2 div:last-child{
-    background-color: white;
-    height: 45%;
-}
-
-#slotbtn3{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 3px solid #555;
-
-}
-#slotbtn3 div{
-    width: 100%;
-}
-#slotbtn3 div:first-child{
-    background-color: #e3350d;
-    height: 45%;
-}
-#slotbtn3 div:nth-child(3){
-    background-color: black;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    z-index: 5;
 }
-#slotbtn3 div:nth-child(3) ul{
+.pokeballBottom{
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    height: 45%;
+}
+.pokeballimgclass{
     position: absolute;
-    background-color: black;
-    width: 22%;
-    height: 230%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
-}
-#slotbtn3 div:nth-child(3) ul li{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: white;
-}
-#slotbtn3 div:last-child{
-    background-color: white;
-    height: 45%;
-}
-
-#slotbtn4{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 3px solid #555;
-
-}
-#slotbtn4 div{
-    width: 100%;
-}
-#slotbtn4 div:first-child{
-    background-color: #e3350d;
-    height: 45%;
-}
-#slotbtn4 div:nth-child(3){
-    background-color: black;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#slotbtn4 div:nth-child(3) ul{
-    position: absolute;
-    background-color: black;
-    width: 22%;
-    height: 230%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
-}
-#slotbtn4 div:nth-child(3) ul li{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: white;
-}
-#slotbtn4 div:last-child{
-    background-color: white;
-    height: 45%;
-}
-
-#slotbtn5{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 3px solid #555;
-
-}
-#slotbtn5 div{
-    width: 100%;
-}
-#slotbtn5 div:first-child{
-    background-color: #e3350d;
-    height: 45%;
-}
-#slotbtn5 div:nth-child(3){
-    background-color: black;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#slotbtn5 div:nth-child(3) ul{
-    position: absolute;
-    background-color: black;
-    width: 22%;
-    height: 230%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
-}
-#slotbtn5 div:nth-child(3) ul li{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: white;
-}
-#slotbtn5 div:last-child{
-    background-color: white;
-    height: 45%;
-}
-
-#slotbtn6{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 3px solid #555;
-
-}
-#slotbtn6 div{
-    width: 100%;
-}
-#slotbtn6 div:first-child{
-    background-color: #e3350d;
-    height: 45%;
-}
-#slotbtn6 div:nth-child(3){
-    background-color: black;
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#slotbtn6 div:nth-child(3) ul{
-    position: absolute;
-    background-color: black;
-    width: 22%;
-    height: 230%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
-}
-#slotbtn6 div:nth-child(3) ul li{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: white;
-}
-#slotbtn6 div:last-child{
-    background-color: white;
-    height: 45%;
-}
-
-#Pokemon1Imgs{
-    width: 100%;
-    height: 100%;
-}
-#Pokemon2Imgs{
-    width: 100%;
-    height: 100%;
-}
-#Pokemon3Imgs{
-    width: 100%;
-    height: 100%;
-}
-#Pokemon4Imgs{
-    width: 100%;
-    height: 100%;
-}
-#Pokemon5Imgs{
-    width: 100%;
-    height: 100%;
-}
-#Pokemon6Imgs{
-    width: 100%;
-    height: 100%;
-}
-/* #pokeballimg1{
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1;
-} */
+    height: 70%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pokemonimgclass{
+    width: 100%;
+    height: 100%;
+}
+

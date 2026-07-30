@@ -207,6 +207,9 @@ async function fetchAdd(){
             Pokemon2Name.textContent = selectedData.name;
             Pokemon2Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
             Pokemon2Imgs.style.display = "block";
+            pokeballimg2.src = selectedData.sprites.other["official-artwork"].front_default;
+            pokeballimg2.style.display = "block";
+
             select = null;
         },{once: true});
 
@@ -216,6 +219,9 @@ async function fetchAdd(){
             Pokemon3Name.textContent = selectedData.name;
             Pokemon3Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
             Pokemon3Imgs.style.display = "block";
+            pokeballimg3.src = selectedData.sprites.other["official-artwork"].front_default;
+            pokeballimg3.style.display = "block";
+
             select = null;
         },{once: true});
 
@@ -225,6 +231,9 @@ async function fetchAdd(){
             Pokemon4Name.textContent = selectedData.name;
             Pokemon4Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
             Pokemon4Imgs.style.display = "block";
+            pokeballimg4.src = selectedData.sprites.other["official-artwork"].front_default;
+            pokeballimg4.style.display = "block";
+
             select = null;
         },{once: true});
 
@@ -234,6 +243,9 @@ async function fetchAdd(){
             Pokemon5Name.textContent = selectedData.name;
             Pokemon5Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
             Pokemon5Imgs.style.display = "block";
+            pokeballimg5.src = selectedData.sprites.other["official-artwork"].front_default;
+            pokeballimg5.style.display = "block";
+
             select = null;
         },{once: true});
 
@@ -243,7 +255,8 @@ async function fetchAdd(){
             Pokemon6Name.textContent = selectedData.name;
             Pokemon6Imgs.src = selectedData.sprites.other["official-artwork"].front_default;
             Pokemon6Imgs.style.display = "block";
-            
+            pokeballimg6.src = selectedData.sprites.other["official-artwork"].front_default;
+            pokeballimg6.style.display = "block";
 
             select = null;
         },{once: true});
