@@ -44,6 +44,7 @@ const move4PP = document.getElementById("move4PP");
 const move4Class = document.getElementById("move4Class");
 //buttom
 const addPokemon = document.getElementById("addPokemon");
+const shinybtn = document.getElementById("shinybtn");
 
 //slot
 const mainslotbtn = document.getElementById("mainslotbtn");
@@ -78,9 +79,12 @@ const pokeballimg4 = document.getElementById("pokeballimg4");
 const pokeballimg5 = document.getElementById("pokeballimg5");
 const pokeballimg6 = document.getElementById("pokeballimg6");
 
+
+
 let selectedPokemon = []
 let slotT = true;
 let select = null;
+let effectselect = null;
 
 async function getFetch(){
     try{
@@ -189,7 +193,47 @@ async function fetchAdd(){
     try{
         const fetchSelect = await fetch(`https://pokeapi.co/api/v2/pokemon/${select}`);
         const selectedData = await fetchSelect.json();
+        effectselect = selectedData;
         slotbtn1.addEventListener("click",() => {
+            if(effectselect.types[0].type.name == "water"){
+                Pokemon1Name.style.color = "#6390F0";
+            }else if(effectselect.types[0].type.name == "normal"){
+                Pokemon1Name.style.color = "#A8A77A";
+            }
+            else if(effectselect.types[0].type.name == "fire"){
+                Pokemon1Name.style.color = "#EE8130";
+            }else if(effectselect.types[0].type.name == "electric"){
+                Pokemon1Name.style.color = "#F7D02C";
+            }else if(effectselect.types[0].type.name == "grass"){
+                Pokemon1Name.style.color = "#7AC74C";
+            }else if(effectselect.types[0].type.name == "ice"){
+                Pokemon1Name.style.color = "#96D9D6";
+            }else if(effectselect.types[0].type.name == "fighting"){
+                Pokemon1Name.style.color = "#C22E28";
+            }else if(effectselect.types[0].type.name == "poison"){
+                Pokemon1Name.style.color = "#A33EA1";
+            }else if(effectselect.types[0].type.name == "ground"){
+                Pokemon1Name.style.color = "#E2BF65";
+            }else if(effectselect.types[0].type.name == "flying"){
+                Pokemon1Name.style.color = "#A98FF3";
+            }else if(effectselect.types[0].type.name == "psychic"){
+                Pokemon1Name.style.color = "#F95587";
+            }else if(effectselect.types[0].type.name == "bug"){
+                Pokemon1Name.style.color = "#A6B91A";
+            }else if(effectselect.types[0].type.name == "rock"){
+                Pokemon1Name.style.color = "#B6A136";
+            }else if(effectselect.types[0].type.name == "ghost"){
+                Pokemon1Name.style.color = "#735797";
+            }else if(effectselect.types[0].type.name == "dragon"){
+                Pokemon1Name.style.color = "#6F35FC";
+            }else if(effectselect.types[0].type.name == "dark"){
+                Pokemon1Name.style.color = "#705746";
+            }else if(effectselect.types[0].type.name == "steel"){
+                Pokemon1Name.style.color = "#B7B7CE";
+            }else{
+                Pokemon1Name.style.color = "#D685AD";
+            };
+            Pokemon1Name.style.fontSize = "19px"
             mainslotbtn.style.display = "none";
             slotT = true;
             Pokemon1Name.textContent = selectedData.name;
@@ -260,6 +304,8 @@ async function fetchAdd(){
 
             select = null;
         },{once: true});
+        
     }
     catch(Error){console.log(Error)};
 }
+
