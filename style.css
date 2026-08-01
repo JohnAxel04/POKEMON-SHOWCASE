@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 #main{
@@ -39,17 +40,19 @@
     gap: 10px;
     overflow-y: auto;
     
-
+    color: #444;
     cursor: pointer;
 }
 #box1 div{
     display: flex;
     gap: 5px;
+
 }
 #box2{
     grid-area: center;
     display: flex;
     flex-direction: column;
+    
 }
 #box3{
     grid-area: right;
@@ -58,6 +61,7 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    color: #444;
 }
 .themoves{
     height: 100%;
@@ -117,6 +121,8 @@
     grid-area: bottom;
     display: flex;
     padding: 10px;
+    position: relative;
+    overflow: hidden;
 }
 #box4 div{
     width: 100%;
@@ -374,4 +380,17 @@
     font-size: 17px;
     font-weight: 900;
     font-family: poppins;
+}
+.pokemonclass{
+    position: relative;
+}
+.pokemonclassv2{
+    position: relative;
+}
+.pokemonimgclass{
+    transition: .2s ease-in;
+}
+.pokemonimgclass:hover{
+    position: absolute;
+    transform: scale(1.2);  
 }
