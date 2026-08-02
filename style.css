@@ -339,6 +339,9 @@
     position: relative;
     z-index: 2;
     height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .pokeballimgclass{
     position: absolute;
@@ -393,4 +396,8 @@
 .pokemonimgclass:hover{
     position: absolute;
     transform: scale(1.2);  
+}
+.pokeballnameclass{
+    font-family: poppins;
+    margin-bottom: 25px;
 }
