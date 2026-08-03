@@ -79,16 +79,21 @@ const pokeballimg4 = document.getElementById("pokeballimg4");
 const pokeballimg5 = document.getElementById("pokeballimg5");
 const pokeballimg6 = document.getElementById("pokeballimg6");
 
-const pokemonimgss = document.querySelectorAll(".pokemonimgclass")
+const pokemonimgss = document.querySelectorAll(".pokemonimgclass");
 
 
 //pokeball name
-const pokeballname1 = document.getElementById("pokeballname1")
-const pokeballname2 = document.getElementById("pokeballname2")
-const pokeballname3 = document.getElementById("pokeballname3")
-const pokeballname4 = document.getElementById("pokeballname4")
-const pokeballname5 = document.getElementById("pokeballname5")
-const pokeballname6 = document.getElementById("pokeballname6")
+const pokeballname1 = document.getElementById("pokeballname1");
+const pokeballname2 = document.getElementById("pokeballname2");
+const pokeballname3 = document.getElementById("pokeballname3");
+const pokeballname4 = document.getElementById("pokeballname4");
+const pokeballname5 = document.getElementById("pokeballname5");
+const pokeballname6 = document.getElementById("pokeballname6");
+
+
+//
+const onoff = document.getElementById("onoff");
+const back = document.getElementById("back");
 
 let selectedPokemon = [null,null,null,null,null,null]
 let slotT = true;
@@ -181,6 +186,7 @@ async function getFetch(){
         move4Accuracy.textContent = moveUrl4.accuracy ?? "-";
         move4Class.textContent = moveUrl4.damage_class.name;
         
+        addPokemon.disabled = false;
     }
     catch(Error){
         console.log(Error)
@@ -195,6 +201,7 @@ addPokemon.addEventListener("click",() => {
         mainslotbtn.style.display = "flex";
         slotT = false;
         fetchAdd()
+        
     }
     else{alert("error")};
 })
@@ -274,6 +281,9 @@ async function fetchAdd(){
             pokeballname1.style.display = "block";
 
             selectedPokemon[0] = selectedData;
+
+            addPokemon.disabled = true;
+
             select = null;
         },{once: true});
         
@@ -347,6 +357,8 @@ async function fetchAdd(){
 
             selectedPokemon[1] = selectedData;
 
+            addPokemon.disabled = true;
+
             select = null;
         },{once: true});
 
@@ -417,6 +429,8 @@ async function fetchAdd(){
 
             pokeballname3.textContent = selectedData.name;
             pokeballname3.style.display = "block";
+
+            addPokemon.disabled = true;
 
             selectedPokemon[2] = selectedData;
 
@@ -491,6 +505,8 @@ async function fetchAdd(){
             pokeballname4.textContent = selectedData.name;
             pokeballname4.style.display = "block";
 
+            addPokemon.disabled = true;
+
             selectedPokemon[3] = selectedData;
 
             select = null;
@@ -563,6 +579,8 @@ async function fetchAdd(){
 
             pokeballname5.textContent = selectedData.name;
             pokeballname5.style.display = "block";
+
+            addPokemon.disabled = true;
 
             selectedPokemon[4] = selectedData;
 
@@ -637,6 +655,8 @@ async function fetchAdd(){
             pokeballname6.textContent = selectedData.name;
             pokeballname6.style.display = "block";
 
+            addPokemon.disabled = true;
+
             selectedPokemon[5] = selectedData;
 
             select = null;
@@ -646,11 +666,10 @@ async function fetchAdd(){
     catch(Error){console.log(Error)};
 }
 pokemonimgss.forEach((img,index) => {
-    img.addEventListener("click",() => {
+    img.addEventListener("click",async () => {
         const pkm = selectedPokemon[index];
 
         const ability2 = pkm.abilities.map(a => a.ability.name);
-        
 
         const heightm = pkm.height / 10;
         
@@ -684,13 +703,67 @@ pokemonimgss.forEach((img,index) => {
         const Imgg = pkm.sprites.other["official-artwork"].front_default;
         mainImg.src = Imgg;
 
-        // const newmoves = pkm.moves[0].move.url;
-        // const newmoveresponse = await fetch(newmoves);
-        // const newmovedata = await newmoveresponse.json();
+        const newmoves = pkm.moves[0].move.url;
+        const newmoveresponse = await fetch(newmoves);
+        const newmovedata = await newmoveresponse.json();
 
-        // console.log(newmovedata)
+        move1name.textContent = newmovedata.name;
+        move1PP.textContent = newmovedata.pp;
+        move1Type.textContent = newmovedata.type.name;
+        move1Power.textContent = newmovedata.power  ?? "-";
+        move1Accuracy.textContent = newmovedata.accuracy  ?? "-";
+        move1Class.textContent = newmovedata.damage_class.name;
 
+        const newmoves1 = pkm.moves[1].move.url;
+        const newmoveresponse1 = await fetch(newmoves1);
+        const newmovedata1 = await newmoveresponse1.json();
 
+        move2name.textContent = newmovedata1.name;
+        move2PP.textContent = newmovedata1.pp;
+        move2Type.textContent = newmovedata1.type.name;
+        move2Power.textContent = newmovedata1.power  ?? "-";
+        move2Accuracy.textContent = newmovedata1.accuracy  ?? "-";
+        move2Class.textContent = newmovedata1.damage_class.name;
+
+        const newmoves2 = pkm.moves[2].move.url;
+        const newmoveresponse2 = await fetch(newmoves2);
+        const newmovedata2 = await newmoveresponse2.json();
+
+        move3name.textContent = newmovedata2.name;
+        move3PP.textContent = newmovedata2.pp;
+        move3Type.textContent = newmovedata2.type.name;
+        move3Power.textContent = newmovedata2.power  ?? "-";
+        move3Accuracy.textContent = newmovedata2.accuracy  ?? "-";
+        move3Class.textContent = newmovedata2.damage_class.name;
+
+        const newmoves3 = pkm.moves[3].move.url;
+        const newmoveresponse3 = await fetch(newmoves3);
+        const newmovedata3 = await newmoveresponse3.json();
+
+        move4name.textContent = newmovedata3.name;
+        move4PP.textContent = newmovedata3.pp;
+        move4Type.textContent = newmovedata3.type.name;
+        move4Power.textContent = newmovedata3.power  ?? "-";
+        move4Accuracy.textContent = newmovedata3.accuracy  ?? "-";
+        move4Class.textContent = newmovedata3.damage_class.name;
+        // console.log(selectedPokemon)
+
+        addPokemon.disabled = true;
         select = null;
     })
+})
+let onoffvar = true;
+shinybtn.addEventListener("click",() => {
+    if(onoffvar){
+        onoff.textContent = "On";
+        onoffvar = false;
+    }else if(!onoffvar){
+        onoff.textContent = "Off";
+        onoffvar = true;
+    }
+    
+})
+back.addEventListener("click",() => {
+    mainslotbtn.style.display = "none";
+    slotT = true;
 })

@@ -9,56 +9,61 @@
 <body>
     <div id="main">
         <div class="box" id="box1">
-            <h1>Pokemon Details</h1>
-            <div id="left1">
-                <p>Name:</p>
-                <p id="mainName"></p>
+            <div class="box1div">
+                <h1>Pokemon Details</h1>
+                <div id="left1" class="box1class">
+                    <p>Name:</p>
+                    <p id="mainName"></p>
+                </div>
+                <div id="left2" class="box1class">
+                    <p>ID:</p>
+                    <p id="mainId"></p>
+                </div>
+                <div id="left3" class="box1class">
+                    <p>Type:</p>
+                    <p  id="mainType"></p>
+                </div>
+                <div id="left4" class="box1class">
+                    <p>Abilities:</p>
+                    <p  id="mainAbility"></p>
+                </div>
+                <div id="left5" class="box1class">
+                    <p>Height:</p>
+                    <p  id="mainHeight"></p>
+                </div>
+                <div id="left6" class="box1class">
+                    <p>Weight:</p>
+                    <p id="mainWeight"></p>
+                </div>
             </div>
-            <div id="left2">
-                <p>ID:</p>
-                <p id="mainId"></p>
+            <div  class="box1div">
+                <h1>Stats</h1>
+                <div id="left7" class="box1class">
+                    <p>HP:</p>
+                    <p id="mainHp"></p>
+                </div>
+                <div id="left8" class="box1class">
+                    <p>Attack:</p>
+                    <p id="mainAttack"></p>
+                </div>
+                <div id="left9" class="box1class">
+                    <p>Defense:</p>
+                    <p id="mainDef"></p>
+                </div>
+                <div id="left10" class="box1class">
+                    <p>Sp. Atk:</p>
+                    <p id="mainSpatk"></p>
+                </div>
+                <div id="left11" class="box1class">
+                    <p>Sp. Def:</p>
+                    <p id="mainSpdef"></p>
+                </div>
+                <div id="left12" class="box1class">
+                    <p>Speed:</p>
+                    <p id="mainSpeed"></p>
+                </div>
             </div>
-            <div id="left3">
-                <p>Type:</p>
-                <p  id="mainType"></p>
-            </div>
-            <div id="left4">
-                <p>Abilities:</p>
-                <p  id="mainAbility"></p>
-            </div>
-            <div id="left5">
-                <p>Height:</p>
-                <p  id="mainHeight"></p>
-            </div>
-            <div id="left6">
-                <p>Weight:</p>
-                <p id="mainWeight"></p>
-            </div>
-            <h1>Stats</h1>
-            <div id="left7">
-                <p>HP:</p>
-                <p id="mainHp"></p>
-            </div>
-            <div id="left8">
-                <p>Attack:</p>
-                <p id="mainAttack"></p>
-            </div>
-            <div id="left9">
-                <p>Defense:</p>
-                <p id="mainDef"></p>
-            </div>
-            <div id="left10">
-                <p>Sp. Atk:</p>
-                <p id="mainSpatk"></p>
-            </div>
-            <div id="left11">
-                <p>Sp. Def:</p>
-                <p id="mainSpdef"></p>
-            </div>
-            <div id="left12">
-                <p>Speed:</p>
-                <p id="mainSpeed"></p>
-            </div>
+            
 
         </div>
         <div class="box" id="box2">
@@ -66,9 +71,11 @@
                 <img src="" alt="" style="display: none;" id="mainImg">
             </div>
             <div id="box2btn">
-                <button id="addPokemon">Add Pokemon</button>
+                <button id="addPokemon" disabled>Add Pokemon</button>
                 <button onclick="getFetch()" id="randomPokemon">Random Pokemon</button>
-                <button id="shinybtn">Shiny Version: Off</button>
+                <button id="shinybtn">
+                    <p>Shiny Version:</p>
+                    <p id="onoff">Off</p></button>
             </div>
         </div>
         <div class="box" id="box3">
@@ -236,6 +243,10 @@
     </div>
     <div id="mainslotbtn">
         <div id="slotsbutton">
+            <div>
+                <button id="back">←</button>
+            </div>
+            
             <div id="slotsbuttontop">
                 <button id="slotbtn1" class="slotbtnclass">
                     <img src="" alt="" style="display: none;" id="pokeballimg1" class="pokeballimgclass">
