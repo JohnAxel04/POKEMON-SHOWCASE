@@ -79,6 +79,13 @@ const pokeballimg4 = document.getElementById("pokeballimg4");
 const pokeballimg5 = document.getElementById("pokeballimg5");
 const pokeballimg6 = document.getElementById("pokeballimg6");
 
+const mainPokemonimg1 = document.getElementById("mainPokemonimg1");
+const mainPokemonimg2 = document.getElementById("mainPokemonimg2");
+const mainPokemonimg3 = document.getElementById("mainPokemonimg3");
+const mainPokemonimg4 = document.getElementById("mainPokemonimg4");
+const mainPokemonimg5 = document.getElementById("mainPokemonimg5");
+const mainPokemonimg6 = document.getElementById("mainPokemonimg6");
+
 const pokemonimgss = document.querySelectorAll(".pokemonimgclass");
 
 
@@ -94,6 +101,8 @@ const pokeballname6 = document.getElementById("pokeballname6");
 //
 const onoff = document.getElementById("onoff");
 const back = document.getElementById("back");
+
+const mainpkmBtn = document.getElementById("mainpkmBtn");
 
 let selectedPokemon = [null,null,null,null,null,null]
 let slotT = true;
@@ -767,3 +776,58 @@ back.addEventListener("click",() => {
     mainslotbtn.style.display = "none";
     slotT = true;
 })
+let anotherMain = [];
+let mymain = [];
+myMainFetch()
+async function myMainFetch(){
+    const mainResponse = await fetch("https://pokeapi.co/api/v2/pokemon/648")
+    const mainData = await mainResponse.json();
+    mymain.push(mainData)
+    
+    const Imgg = mymain[0].sprites.other["official-artwork"].front_default;
+    mainPokemonimg1.src = Imgg;
+    mainPokemonimg1.style.display = "block";
+
+    const mainResponse2 = await fetch("https://pokeapi.co/api/v2/pokemon/608")
+    const mainData2 = await mainResponse2.json();
+    mymain.push(mainData2)
+    
+    const Imgg2 = mymain[1].sprites.other["official-artwork"].front_default;
+    mainPokemonimg2.src = Imgg2;
+    mainPokemonimg2.style.display = "block";
+
+    const mainResponse3 = await fetch("https://pokeapi.co/api/v2/pokemon/149")
+    const mainData3 = await mainResponse3.json();
+    mymain.push(mainData3)
+    
+    const Imgg3 = mymain[2].sprites.other["official-artwork"].front_default;
+    mainPokemonimg3.src = Imgg3;
+    mainPokemonimg3.style.display = "block";
+
+    const mainResponse4 = await fetch("https://pokeapi.co/api/v2/pokemon/131")
+    const mainData4 = await mainResponse4.json();
+    mymain.push(mainData4)
+    
+    const Imgg4 = mymain[3].sprites.other["official-artwork"].front_default;
+    mainPokemonimg4.src = Imgg4;
+    mainPokemonimg4.style.display = "block";
+
+    const mainResponse5 = await fetch("https://pokeapi.co/api/v2/pokemon/157")
+    const mainData5 = await mainResponse5.json();
+    mymain.push(mainData5)
+    
+    const Imgg5 = mymain[4].sprites.other["official-artwork"].front_default;
+    mainPokemonimg5.src = Imgg5;
+    mainPokemonimg5.style.display = "block";
+
+    const mainResponse6 = await fetch("https://pokeapi.co/api/v2/pokemon/495")
+    const mainData6 = await mainResponse6.json();
+    mymain.push(mainData6)
+    
+    const Imgg6 = mymain[5].sprites.other["official-artwork"].front_default;
+    mainPokemonimg6.src = Imgg6;
+    mainPokemonimg6.style.display = "block";
+
+    console.log(mymain);
+}
+

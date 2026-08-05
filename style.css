@@ -433,6 +433,8 @@
     cursor: pointer;
     /* border: 1px solid #444; */
 }
+
+/* yesorno */
 #mainStart{
     display: flex;
     width: 100%;
@@ -480,4 +482,28 @@
 }
 #mainStartbtn button:last-child{
     background-color: red;
+}
+#mypokemons{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#mainPokemonList{
+    display: flex;
+    height: 100vh;
+}
+.mainPkm{
+    width: 100%;
+    padding-top: 150px;
+    border-right: solid;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#mainHeader{
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(black,rgb(24, 24, 24),rgb(48, 48, 48),grey);
 }
