@@ -780,7 +780,7 @@ let anotherMain = [];
 let mymain = [];
 myMainFetch()
 async function myMainFetch(){
-    const mainResponse = await fetch("https://pokeapi.co/api/v2/pokemon/648")
+    const mainResponse = await fetch("https://pokeapi.co/api/v2/pokemon/495")
     const mainData = await mainResponse.json();
     mymain.push(mainData)
     
@@ -796,7 +796,7 @@ async function myMainFetch(){
     mainPokemonimg2.src = Imgg2;
     mainPokemonimg2.style.display = "block";
 
-    const mainResponse3 = await fetch("https://pokeapi.co/api/v2/pokemon/149")
+    const mainResponse3 = await fetch("https://pokeapi.co/api/v2/pokemon/131")
     const mainData3 = await mainResponse3.json();
     mymain.push(mainData3)
     
@@ -804,7 +804,7 @@ async function myMainFetch(){
     mainPokemonimg3.src = Imgg3;
     mainPokemonimg3.style.display = "block";
 
-    const mainResponse4 = await fetch("https://pokeapi.co/api/v2/pokemon/131")
+    const mainResponse4 = await fetch("https://pokeapi.co/api/v2/pokemon/157")
     const mainData4 = await mainResponse4.json();
     mymain.push(mainData4)
     
@@ -812,7 +812,7 @@ async function myMainFetch(){
     mainPokemonimg4.src = Imgg4;
     mainPokemonimg4.style.display = "block";
 
-    const mainResponse5 = await fetch("https://pokeapi.co/api/v2/pokemon/157")
+    const mainResponse5 = await fetch("https://pokeapi.co/api/v2/pokemon/648")
     const mainData5 = await mainResponse5.json();
     mymain.push(mainData5)
     
@@ -820,7 +820,7 @@ async function myMainFetch(){
     mainPokemonimg5.src = Imgg5;
     mainPokemonimg5.style.display = "block";
 
-    const mainResponse6 = await fetch("https://pokeapi.co/api/v2/pokemon/495")
+    const mainResponse6 = await fetch("https://pokeapi.co/api/v2/pokemon/149")
     const mainData6 = await mainResponse6.json();
     mymain.push(mainData6)
     
