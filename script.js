@@ -104,10 +104,11 @@ const back = document.getElementById("back");
 
 const mainpkmBtn = document.getElementById("mainpkmBtn");
 
-let selectedPokemon = [null,null,null,null,null,null]
+let selectedPokemon = [null,null,null,null,null,null];
 let slotT = true;
 let select = null;
 let effectselect = null;
+
 
 async function getFetch(){
     try{
@@ -118,7 +119,7 @@ async function getFetch(){
 
         const data = await response.json();
 
-        select = myrandom;
+        
 
         mainName.textContent = data.name;
 
@@ -194,13 +195,19 @@ async function getFetch(){
         move4Power.textContent = moveUrl4.power ?? "-";
         move4Accuracy.textContent = moveUrl4.accuracy ?? "-";
         move4Class.textContent = moveUrl4.damage_class.name;
-        
+
+        select = myrandom;
+
         addPokemon.disabled = false;
+
+        console.log(data);
+        console.log(select)
     }
     catch(Error){
         console.log(Error)
     }
 }
+
 addPokemon.addEventListener("click",() => {
     if(select == null){
         alert("Select first to add Pokemon")
@@ -208,11 +215,10 @@ addPokemon.addEventListener("click",() => {
     }
     else if(slotT){
         mainslotbtn.style.display = "flex";
+        fetchAdd();
         slotT = false;
-        fetchAdd()
-        
     }
-    else{alert("error")};
+    else(alert("error"))
 })
 
 async function fetchAdd(){
@@ -670,6 +676,8 @@ async function fetchAdd(){
 
             select = null;
         },{once: true});
+
+        console.log(effectselect);
         
     }
     catch(Error){console.log(Error)};
@@ -780,54 +788,108 @@ let anotherMain = [];
 let mymain = [];
 myMainFetch()
 async function myMainFetch(){
-    const mainResponse = await fetch("https://pokeapi.co/api/v2/pokemon/495")
-    const mainData = await mainResponse.json();
-    mymain.push(mainData)
-    
-    const Imgg = mymain[0].sprites.other["official-artwork"].front_default;
-    mainPokemonimg1.src = Imgg;
-    mainPokemonimg1.style.display = "block";
+    try{
+        const mainResponse = await fetch("https://pokeapi.co/api/v2/pokemon/495")
+        const mainData = await mainResponse.json();
+        mymain.push(mainData)
+        
+        const Imgg = mymain[0].sprites.other["official-artwork"].front_default;
+        mainPokemonimg1.src = Imgg;
+        mainPokemonimg1.style.display = "block";
 
-    const mainResponse2 = await fetch("https://pokeapi.co/api/v2/pokemon/608")
-    const mainData2 = await mainResponse2.json();
-    mymain.push(mainData2)
-    
-    const Imgg2 = mymain[1].sprites.other["official-artwork"].front_default;
-    mainPokemonimg2.src = Imgg2;
-    mainPokemonimg2.style.display = "block";
+        const mainResponse2 = await fetch("https://pokeapi.co/api/v2/pokemon/608")
+        const mainData2 = await mainResponse2.json();
+        mymain.push(mainData2)
+        
+        const Imgg2 = mymain[1].sprites.other["official-artwork"].front_default;
+        mainPokemonimg2.src = Imgg2;
+        mainPokemonimg2.style.display = "block";
 
-    const mainResponse3 = await fetch("https://pokeapi.co/api/v2/pokemon/131")
-    const mainData3 = await mainResponse3.json();
-    mymain.push(mainData3)
-    
-    const Imgg3 = mymain[2].sprites.other["official-artwork"].front_default;
-    mainPokemonimg3.src = Imgg3;
-    mainPokemonimg3.style.display = "block";
+        const mainResponse3 = await fetch("https://pokeapi.co/api/v2/pokemon/131")
+        const mainData3 = await mainResponse3.json();
+        mymain.push(mainData3)
+        
+        const Imgg3 = mymain[2].sprites.other["official-artwork"].front_default;
+        mainPokemonimg3.src = Imgg3;
+        mainPokemonimg3.style.display = "block";
 
-    const mainResponse4 = await fetch("https://pokeapi.co/api/v2/pokemon/157")
-    const mainData4 = await mainResponse4.json();
-    mymain.push(mainData4)
-    
-    const Imgg4 = mymain[3].sprites.other["official-artwork"].front_default;
-    mainPokemonimg4.src = Imgg4;
-    mainPokemonimg4.style.display = "block";
+        const mainResponse4 = await fetch("https://pokeapi.co/api/v2/pokemon/157")
+        const mainData4 = await mainResponse4.json();
+        mymain.push(mainData4)
+        
+        const Imgg4 = mymain[3].sprites.other["official-artwork"].front_default;
+        mainPokemonimg4.src = Imgg4;
+        mainPokemonimg4.style.display = "block";
 
-    const mainResponse5 = await fetch("https://pokeapi.co/api/v2/pokemon/648")
-    const mainData5 = await mainResponse5.json();
-    mymain.push(mainData5)
-    
-    const Imgg5 = mymain[4].sprites.other["official-artwork"].front_default;
-    mainPokemonimg5.src = Imgg5;
-    mainPokemonimg5.style.display = "block";
+        const mainResponse5 = await fetch("https://pokeapi.co/api/v2/pokemon/648")
+        const mainData5 = await mainResponse5.json();
+        mymain.push(mainData5)
+        
+        const Imgg5 = mymain[4].sprites.other["official-artwork"].front_default;
+        mainPokemonimg5.src = Imgg5;
+        mainPokemonimg5.style.display = "block";
 
-    const mainResponse6 = await fetch("https://pokeapi.co/api/v2/pokemon/149")
-    const mainData6 = await mainResponse6.json();
-    mymain.push(mainData6)
-    
-    const Imgg6 = mymain[5].sprites.other["official-artwork"].front_default;
-    mainPokemonimg6.src = Imgg6;
-    mainPokemonimg6.style.display = "block";
+        const mainResponse6 = await fetch("https://pokeapi.co/api/v2/pokemon/149")
+        const mainData6 = await mainResponse6.json();
+        mymain.push(mainData6)
+        
+        const Imgg6 = mymain[5].sprites.other["official-artwork"].front_default;
+        mainPokemonimg6.src = Imgg6;
+        mainPokemonimg6.style.display = "block";
+    }
+    catch(error){
+        console.log(error);
+    }
 
-    console.log(mymain);
 }
 
+const clickBtn = document.getElementById("clickBtn");
+const mainStart = document.getElementById("mainStart");
+const yesbtn = document.getElementById("yesbtn");
+const nobtn = document.getElementById("nobtn");
+const mypokemons = document.getElementById("mypokemons");
+
+const text1 = "These are the Pokémon that have always been by my side.";
+const texted1 = document.getElementById("texted1");
+let text1Counter = 0;
+
+function txt1(){
+    if(text1Counter < text1.length){
+        texted1.textContent += text1.charAt(text1Counter);
+        text1Counter++;
+        setTimeout(txt1, 50);
+    }
+    else{
+        txt2();
+    }
+}
+
+const text2 = "Can you defeat them all?"
+const texted2 = document.getElementById("texted2");
+
+
+let text2Counter = 0;
+
+function txt2(){
+    if(text2Counter < text2.length){
+        texted2.textContent += text2.charAt(text2Counter);
+        text2Counter++;
+        setTimeout(txt2 , 50);
+    }
+    else{
+        clickBtn.style.display = "block";
+    }
+}
+
+
+clickBtn.addEventListener("click",()=>{
+    mypokemons.style.display = "none";
+});
+yesbtn.addEventListener("click",() => {
+    mainStart.style.display = "none";
+    mypokemons.style.display = "block";
+    txt1();
+});
+nobtn.addEventListener("click",()=>{
+    return
+})

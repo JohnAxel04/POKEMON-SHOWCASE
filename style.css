@@ -16,6 +16,8 @@
                         "bottom bottom  bottom";
     gap: 5px;
     background-color: #F3F4F6;
+    position: relative;
+    z-index: 99;
 }
 .box{
     background-color: #FFFFFF;
@@ -269,6 +271,7 @@
     top: 0;
     display: none;
     justify-content: center;
+    z-index: 999;
 }
 #slotsbutton{
     margin-top: 80px;
@@ -440,53 +443,29 @@
     width: 100%;
     height: 100vh;
     justify-content: center;
+    position: absolute;
+    background-image: url(maxpokemon.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 999;
+    
 }
-#mainStart img{
-    height: 65%;
-    width: 100%;
-    border-radius: 50%;
-}
-#mainStart h1{
-    font-family: poppins;
-}
-#mainStart2{
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 #mainStartdiv{
-    justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    height: 13%;
-}
-#mainStartbtn{
-    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+    width: 100%;
 }
-#mainStartbtn button{
-    width: 30%;
-    border-radius: 7px;
-    border: none;
-    outline: none;
-}
-#mainStartbtn button:first-child{
-    background-color: green;
-}
-#mainStartbtn button:last-child{
-    background-color: red;
-}
+
 #mypokemons{
     width: 100%;
     height: 100vh;
-    position: relative;
+    position: absolute;
+    z-index: 999;
 }
 #mainPokemonList{
     display: flex;
@@ -494,7 +473,7 @@
 }
 .mainPkm{
     width: 100%;
-    padding-top: 150px;
+    padding-top: 100px;
     border-right: solid 1px rgba(255,255,255,0.2);
     overflow: hidden;
     display: flex;
@@ -512,6 +491,13 @@
         rgba(0, 0, 0, .65) 70%,
         transparent 100%
     );
+}
+#mainHeader h3{
+    color: rgb(197, 197, 197);
+    font-size: 21px;
+    margin: 20px;
+    font-weight: 700;
+    font-family: poppins;
 }
 #mainPokemon1{
     background: linear-gradient(
@@ -566,4 +552,73 @@
         rgb(190, 132, 23) 70%,
         rgb(255, 213, 135) 100%
     );
+}
+#clickBtn{
+    position: absolute;
+    right: 0;
+    top: 70px;
+    animation: flash 2.2s infinite;
+    cursor: pointer;
+    
+}
+@keyframes flash{
+    0%{
+        opacity: 0;
+    };
+    50%{
+        opacity: .5;
+    };
+    100%{
+        opacity: 0;
+    }
+
+}
+#mainP{
+    height: auto;
+    width: 80%;
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 20px;
+}
+#mainStartdiv h1{
+    width: 80%;
+    font-size: 40px;
+    margin-top: 100px;
+}
+#mainStartbtn{
+    width: 80%;
+    display: flex;
+}
+#mainStartbtn button{
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+#mainimgdiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#mainimgdiv img{
+    height: 70%;
+    width: 70%;
+    margin-right: 130px;
+    animation: bounce 3s infinite;
+    position: relative;
+    z-index: 1;
+}
+@keyframes bounce{
+    0%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
 }

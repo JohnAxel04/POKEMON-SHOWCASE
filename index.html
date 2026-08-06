@@ -7,20 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="mainStart" style="display: none;">
-        <div id="mainStart2" style="background-color: white; display: block;">
-            <img src="maxpokemon.png" alt="">
-            <div id="mainStartdiv">
-               <h1>Want to battle my pokemon?</h1>
-                <div id="mainStartbtn">
-                    <button>Yes</button>
-                    <button>No</button>
-                </div> 
+    <div id="mainStart" style="display: flex;">
+        <div id="mainStartdiv">
+            <h1>Pokemon Vault</h1>
+            <div id="mainP">
+                <p>Every trainer has a story.</p>
+                <p>This is mine.</p>
+                <br>
+                <p>Meet the Pokémon that</p>
+                <p>have always been by my side.</p>
             </div>
+            <div id="mainStartbtn">
+                <button id="yesbtn">Enter the Game</button>
+            </div> 
         </div>
+        <!-- <div id="mainimgdiv">
+            <img id="introimg" src="" alt="">
+        </div> -->
+        
     </div>
-    <div id="mypokemons">
-        <div id="mainHeader"></div>
+
+    <div id="mypokemons" style="display: none;">
+        <div id="mainHeader">
+            <h3 id="texted1"></h3>
+            <h3 id="texted2"></h3>
+            <h3 id="clickBtn" style="display: none;">Click here to continue</h3>
+        </div>
         <div id="mainPokemonList">
             <div id="mainPokemon1" class="mainPkm"><img id="mainPokemonimg1" src="" alt="" style="display: none;"></div>
             <div id="mainPokemon2" class="mainPkm"><img id="mainPokemonimg2" src="" alt="" style="display: none;"></div>
@@ -33,7 +45,8 @@
         </div>
         <!-- <button id="mainpkmBtn">qwerwqe</button> -->
     </div>
-    <div id="main" style="display: none;">
+
+    <div id="main">
         <div class="box" id="box1">
             <div class="box1div">
                 <h1>Pokemon Details</h1>
