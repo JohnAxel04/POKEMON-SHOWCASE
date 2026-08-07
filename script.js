@@ -846,7 +846,6 @@ async function myMainFetch(){
 const clickBtn = document.getElementById("clickBtn");
 const mainStart = document.getElementById("mainStart");
 const yesbtn = document.getElementById("yesbtn");
-const nobtn = document.getElementById("nobtn");
 const mypokemons = document.getElementById("mypokemons");
 
 const text1 = "These are the Pokémon that have always been by my side.";
@@ -868,6 +867,7 @@ const text2 = "Can you defeat them all?"
 const texted2 = document.getElementById("texted2");
 
 
+
 let text2Counter = 0;
 
 function txt2(){
@@ -884,12 +884,111 @@ function txt2(){
 
 clickBtn.addEventListener("click",()=>{
     mypokemons.style.display = "none";
+    txt11()
 });
 yesbtn.addEventListener("click",() => {
     mainStart.style.display = "none";
     mypokemons.style.display = "block";
     txt1();
 });
-nobtn.addEventListener("click",()=>{
-    return
-})
+
+const p01 = document.getElementById("p01");
+const p02 = document.getElementById("p02");
+const p03 = document.getElementById("p03");
+const p04 = document.getElementById("p04");
+
+
+const text01 = "Every trainer has a story."; 
+const text02 = "This is mine."; 
+const text03 = "Meet the Pokémon that"; 
+const text04 = "have always been by my side."; 
+
+let txtC01 = 0;
+let txtC02 = 0;
+let txtC03 = 0;
+let txtC04 = 0;
+txt01()
+function txt01(){
+    if(txtC01 < text01.length){
+        p01.textContent += text01.charAt(txtC01);
+        txtC01++;
+        setTimeout(txt01 , 50);
+    }
+    else{
+        txt02()
+    }
+}
+function txt02(){
+    if(txtC02 < text02.length){
+        p02.textContent += text02.charAt(txtC02);
+        txtC02++;
+        setTimeout(txt02 , 50);
+    }
+    else{
+        txt03()
+    }
+}
+function txt03(){
+    if(txtC03 < text03.length){
+        p03.textContent += text03.charAt(txtC03);
+        txtC03++;
+        setTimeout(txt03 , 50);
+    }
+    else{
+        txt04()
+    }
+}
+function txt04(){
+    if(txtC04 < text04.length){
+        p04.textContent += text04.charAt(txtC04);
+        txtC04++;
+        setTimeout(txt04 , 50);
+    }
+    else{
+        yesbtn.style.display = "block";
+    }
+}
+
+// const mainHeader2 = document.getElementById("mainHeader2");
+// const texted11 = document.getElementById("texted11");
+// const texted22 = document.getElementById("texted22");
+// const clickBtn2 = document.getElementById("clickBtn2");
+
+// const text11 = "This is the Pokémon Vault.";
+// let text11Counter = 0;
+
+// function txt11(){
+//     if(text11Counter < text11.length){
+//         texted11.textContent += text11.charAt(text11Counter);
+//         text11Counter++;
+//         setTimeout(txt11, 50);
+//     }
+//     else{
+//         txt22();
+//     }
+// }
+
+// const text22 = "This is where you select a Pokemon randomly."
+
+// let text22Counter = 0;
+
+// function txt22(){
+//     if(text22Counter < text22.length){
+//         texted22.textContent += text22.charAt(text22Counter);
+//         text22Counter++;
+//         setTimeout(txt22 , 50);
+//     }
+//     else{
+//         clickBtn2.style.display = "block";
+//     }
+// }
+// clickBtn2.addEventListener("click",() => {
+//     mainHeader2.style.display = "none";
+// })
+const slanted = document.getElementById("slanted");
+
+for(let i = 0; i<12 ; i++){
+    const dives = document.createElement("div");
+    dives.classList.add("divesclass");
+    slanted.appendChild(dives);
+}
