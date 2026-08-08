@@ -880,11 +880,11 @@ function txt2(){
         clickBtn.style.display = "block";
     }
 }
-
+const slanteddiv = document.getElementById("slanteddiv");
 
 clickBtn.addEventListener("click",()=>{
     mypokemons.style.display = "none";
-    txt11()
+    slanteddiv.style.display = "flex";
 });
 yesbtn.addEventListener("click",() => {
     mainStart.style.display = "none";
@@ -985,10 +985,41 @@ function txt04(){
 // clickBtn2.addEventListener("click",() => {
 //     mainHeader2.style.display = "none";
 // })
+
 const slanted = document.getElementById("slanted");
 
-for(let i = 0; i<12 ; i++){
+const slant = document.getElementById("slant");
+
+for(let i = 0; i<6 ; i++){
     const dives = document.createElement("div");
     dives.classList.add("divesclass");
     slanted.appendChild(dives);
 }
+
+const slanteds = document.getElementById("slanteds");
+
+for(let j = 0; j<6 ; j++){
+    const dives2 = document.createElement("div");
+    dives2.classList.add("divesclass2");
+    slanteds.appendChild(dives2);
+}
+
+const lastslanted = document.querySelector("#slanted .divesclass:nth-child(6)");
+
+lastslanted.addEventListener("animationend",() => {
+    slanted.remove()
+    slanteddiv.style.display = "none";
+})
+
+const slanttop = document.getElementById("slanttop");
+const lastslanteds = document.querySelector("#slanteds .divesclass2:nth-child(6)");
+
+lastslanteds.addEventListener("animationend",() => {
+    slanteds.remove()
+    slanttop.style.animation = "openmo 2s cubic-bezier(.7 , 0 ,.2 ,1) forwards";
+})
+slanttop.addEventListener("animationend",() => {
+    slant.style.display = "none";
+})
+
+
