@@ -200,8 +200,6 @@ async function getFetch(){
 
         addPokemon.disabled = false;
 
-        console.log(data);
-        console.log(select)
     }
     catch(Error){
         console.log(Error)
@@ -297,6 +295,8 @@ async function fetchAdd(){
 
             selectedPokemon[0] = selectedData;
 
+            selectCheck()
+
             addPokemon.disabled = true;
 
             select = null;
@@ -371,6 +371,8 @@ async function fetchAdd(){
             pokeballname2.style.display = "block";
 
             selectedPokemon[1] = selectedData;
+
+            selectCheck()
 
             addPokemon.disabled = true;
 
@@ -449,6 +451,8 @@ async function fetchAdd(){
 
             selectedPokemon[2] = selectedData;
 
+            selectCheck()
+
             select = null;
         },{once: true});
 
@@ -523,6 +527,8 @@ async function fetchAdd(){
             addPokemon.disabled = true;
 
             selectedPokemon[3] = selectedData;
+
+            selectCheck()
 
             select = null;
         },{once: true});
@@ -599,6 +605,8 @@ async function fetchAdd(){
 
             selectedPokemon[4] = selectedData;
 
+            selectCheck()
+
             select = null;
         },{once: true});
 
@@ -674,11 +682,10 @@ async function fetchAdd(){
 
             selectedPokemon[5] = selectedData;
 
-            select = null;
-        },{once: true});
+            selectCheck()
 
-        console.log(effectselect);
-        
+            select = null;
+        },{once: true}); 
     }
     catch(Error){console.log(Error)};
 }
@@ -786,7 +793,9 @@ back.addEventListener("click",() => {
 })
 let anotherMain = [];
 let mymain = [];
+
 myMainFetch()
+
 async function myMainFetch(){
     try{
         const mainResponse = await fetch("https://pokeapi.co/api/v2/pokemon/495")
@@ -1021,5 +1030,20 @@ lastslanteds.addEventListener("animationend",() => {
 slanttop.addEventListener("animationend",() => {
     slant.style.display = "none";
 })
+let checkT = false;
 
+const box2btn = document.getElementById("box2btn");
 
+function selectCheck(){
+    if(!checkT && !selectedPokemon.includes(null)){
+        checkT = true;
+        console.log(selectedPokemon)
+        const showTeam = document.createElement("button");
+        addPokemon.textContent = "Change Pokemon"
+        showTeam.id = "showTeam";
+        showTeam.textContent = "Show Team"
+        box2btn.append(showTeam);
+        
+    }
+}
+    
