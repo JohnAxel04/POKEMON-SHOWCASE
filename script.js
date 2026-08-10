@@ -97,6 +97,29 @@ const pokeballname4 = document.getElementById("pokeballname4");
 const pokeballname5 = document.getElementById("pokeballname5");
 const pokeballname6 = document.getElementById("pokeballname6");
 
+//Team images
+const teamImage1 = document.getElementById("teamImage1");
+const teamImage2 = document.getElementById("teamImage2");
+const teamImage3 = document.getElementById("teamImage3");
+const teamImage4 = document.getElementById("teamImage4");
+const teamImage5 = document.getElementById("teamImage5");
+const teamImage6 = document.getElementById("teamImage6");
+
+//Team names
+const pkteam1Name = document.getElementById("pkteam1Name");
+const pkteam2Name = document.getElementById("pkteam2Name");
+const pkteam3Name = document.getElementById("pkteam3Name");
+const pkteam4Name = document.getElementById("pkteam4Name");
+const pkteam5Name = document.getElementById("pkteam5Name");
+const pkteam6Name = document.getElementById("pkteam6Name");
+
+//Team Ids
+const pkteam1Id = document.getElementById("pkteam1Id");
+const pkteam2Id = document.getElementById("pkteam2Id");
+const pkteam3Id = document.getElementById("pkteam3Id");
+const pkteam4Id = document.getElementById("pkteam4Id");
+const pkteam5Id = document.getElementById("pkteam5Id");
+const pkteam6Id = document.getElementById("pkteam6Id");
 
 //
 const onoff = document.getElementById("onoff");
@@ -289,9 +312,12 @@ async function fetchAdd(){
             Pokemon1Imgs.style.display = "block";
             pokeballimg1.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg1.style.display = "block";
+            teamImage1.src = selectedData.sprites.other["official-artwork"].front_default;
             
             pokeballname1.textContent = selectedData.name;
             pokeballname1.style.display = "block";
+            pkteam1Name.textContent = selectedData.name;
+            pkteam1Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
 
             selectedPokemon[0] = selectedData;
 
@@ -366,9 +392,12 @@ async function fetchAdd(){
             Pokemon2Imgs.style.display = "block";
             pokeballimg2.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg2.style.display = "block";
+            teamImage2.src = selectedData.sprites.other["official-artwork"].front_default;
 
             pokeballname2.textContent = selectedData.name;
             pokeballname2.style.display = "block";
+            pkteam2Name.textContent = selectedData.name;
+            pkteam2Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
 
             selectedPokemon[1] = selectedData;
 
@@ -443,9 +472,12 @@ async function fetchAdd(){
             Pokemon3Imgs.style.display = "block";
             pokeballimg3.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg3.style.display = "block";
+            teamImage3.src = selectedData.sprites.other["official-artwork"].front_default;
 
             pokeballname3.textContent = selectedData.name;
             pokeballname3.style.display = "block";
+            pkteam3Name.textContent = selectedData.name;
+            pkteam3Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
 
             addPokemon.disabled = true;
 
@@ -520,9 +552,12 @@ async function fetchAdd(){
             Pokemon4Imgs.style.display = "block";
             pokeballimg4.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg4.style.display = "block";
+            teamImage4.src = selectedData.sprites.other["official-artwork"].front_default;
 
             pokeballname4.textContent = selectedData.name;
             pokeballname4.style.display = "block";
+            pkteam4Name.textContent = selectedData.name;
+            pkteam4Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
 
             addPokemon.disabled = true;
 
@@ -597,9 +632,12 @@ async function fetchAdd(){
             Pokemon5Imgs.style.display = "block";
             pokeballimg5.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg5.style.display = "block";
+            teamImage5.src = selectedData.sprites.other["official-artwork"].front_default;
 
             pokeballname5.textContent = selectedData.name;
             pokeballname5.style.display = "block";
+            pkteam5Name.textContent = selectedData.name;
+            pkteam5Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
 
             addPokemon.disabled = true;
 
@@ -674,9 +712,12 @@ async function fetchAdd(){
             Pokemon6Imgs.style.display = "block";
             pokeballimg6.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg6.style.display = "block";
+            teamImage6.src = selectedData.sprites.other["official-artwork"].front_default;
 
             pokeballname6.textContent = selectedData.name;
             pokeballname6.style.display = "block";
+            pkteam6Name.textContent = selectedData.name;
+            pkteam6Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
 
             addPokemon.disabled = true;
 
@@ -856,6 +897,7 @@ const clickBtn = document.getElementById("clickBtn");
 const mainStart = document.getElementById("mainStart");
 const yesbtn = document.getElementById("yesbtn");
 const mypokemons = document.getElementById("mypokemons");
+const justscreen = document.getElementById("justscreen");
 
 const text1 = "These are the Pokémon that have always been by my side.";
 const texted1 = document.getElementById("texted1");
@@ -898,6 +940,7 @@ clickBtn.addEventListener("click",()=>{
 yesbtn.addEventListener("click",() => {
     mainStart.style.display = "none";
     mypokemons.style.display = "block";
+    justscreen.style.display = "none";
     txt1();
 });
 
@@ -1033,17 +1076,20 @@ slanttop.addEventListener("animationend",() => {
 let checkT = false;
 
 const box2btn = document.getElementById("box2btn");
+const showTeam = document.createElement("button");
+const showmyTeam = document.getElementById("showmyTeam");
 
 function selectCheck(){
     if(!checkT && !selectedPokemon.includes(null)){
         checkT = true;
         console.log(selectedPokemon)
-        const showTeam = document.createElement("button");
         addPokemon.textContent = "Change Pokemon"
         showTeam.id = "showTeam";
         showTeam.textContent = "Show Team"
         box2btn.append(showTeam);
-        
     }
 }
-    
+
+showTeam.addEventListener("click",()=>{
+    showmyTeam.style.display = "flex";
+})

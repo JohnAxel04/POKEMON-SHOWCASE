@@ -864,3 +864,117 @@
     background-color: #4a6580;
     transform: translateY(-3px);
 }
+#justscreen{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    position: absolute;
+    z-index: 995;
+}
+#showmyTeam{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+}
+.teaminfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+.nameclass{
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+.idclass{
+    font-size: 20px;
+}
+
+.teaminfo p{
+    height:30px;
+    font-family: poppins;
+    font-weight: 550;
+}
+.imgclass{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.innerimgclass{
+    width: 105px;
+    height: auto;
+}
+#showPokemon{
+    background-color: #34495e;
+    height: 85%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas:"sleft smid sright"
+                        "tleft tmid tright";
+    padding: 25px;
+    gap: 25px;
+}
+.teamslot{
+    box-shadow: 4px 6px 10px hsla(0, 0%, 0%, 0.45);
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+.teamslotimg{
+    width: 60%;
+    background-color: grey;
+}
+.teaminfo{
+    width: 40%;
+    background-color: darkgrey;
+}
+#teamslot1{
+    grid-area: sleft;
+}
+#teamslot2{
+    grid-area: smid;
+}
+#teamslot3{
+    grid-area: sright;
+}
+#teamslot4{
+    grid-area: tleft;
+}
+#teamslot5{
+    grid-area: tmid;
+}
+#teamslot6{
+    grid-area: tright;
+}
+#showbuttons{
+    background-color: #323e49;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#showbuttons button{
+    width: 230px;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+.teamslotimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.teamslotimg img{
+    width: 100%;
+}
