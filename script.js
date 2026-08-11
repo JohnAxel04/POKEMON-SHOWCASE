@@ -121,9 +121,20 @@ const pkteam4Id = document.getElementById("pkteam4Id");
 const pkteam5Id = document.getElementById("pkteam5Id");
 const pkteam6Id = document.getElementById("pkteam6Id");
 
+//badges
+const innerimg1 = document.getElementById("innerimg1");
+const innerimg2 = document.getElementById("innerimg2");
+const innerimg3 = document.getElementById("innerimg3");
+const innerimg4 = document.getElementById("innerimg4");
+const innerimg5 = document.getElementById("innerimg5");
+const innerimg6 = document.getElementById("innerimg6");
 //
 const onoff = document.getElementById("onoff");
 const back = document.getElementById("back");
+
+//buttons
+const backBtn = document.getElementById("backBtn");
+const battleBtn = document.getElementById("battleBtn");
 
 const mainpkmBtn = document.getElementById("mainpkmBtn");
 
@@ -132,6 +143,26 @@ let slotT = true;
 let select = null;
 let effectselect = null;
 
+const badgeimg = {
+    normal: "badges/normal_badge-removebg-preview.png",
+    water: "badges/water_badge-removebg-preview.png",
+    fire: "badges/fire_badge-removebg-preview.png",
+    electric: "badges/elec_badge-removebg-preview.png",
+    grass: "badges/grass_badge-removebg-preview.png",
+    ice: "badges/ice_badge-removebg-preview.png",
+    bug: "badges/bugg.png",
+    dark: "badges/dark.png",
+    dragon: "badges/drag.png",
+    fairy: "badges/fairy.png",
+    fighting: "badges/fighting badge.png",
+    flying: "badges/flying.png",
+    ghost: "badges/ghost.png",
+    ground: "badges/ground.png",
+    poison: "badges/poison.png",
+    psychic: "badges/psyc.png",
+    rock: "badges/rock.png",
+    steel: "badges/steel.png",
+}
 
 async function getFetch(){
     try{
@@ -313,11 +344,24 @@ async function fetchAdd(){
             pokeballimg1.src = selectedData.sprites.other["official-artwork"].front_default;
             pokeballimg1.style.display = "block";
             teamImage1.src = selectedData.sprites.other["official-artwork"].front_default;
-            
             pokeballname1.textContent = selectedData.name;
+            
+            
             pokeballname1.style.display = "block";
-            pkteam1Name.textContent = selectedData.name;
+            
+            if(selectedData.name.length > 15){
+                pkteam1Name.style.fontSize = "18px";
+                
+            }else if(selectedData.name.length > 22){
+                pkteam1Name.style.fontSize = "15px";
+                
+            }else if(selectedData.name.length > 10){
+                pkteam1Name.style.fontSize = "24px";
+                
+            }
+            pkteam1Name.textContent = selectedData.name.charAt(0).toUpperCase() + selectedData.name.slice(1);
             pkteam1Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
+            innerimg1.src = badgeimg[selectedData.types[0].type.name];
 
             selectedPokemon[0] = selectedData;
 
@@ -396,9 +440,21 @@ async function fetchAdd(){
 
             pokeballname2.textContent = selectedData.name;
             pokeballname2.style.display = "block";
-            pkteam2Name.textContent = selectedData.name;
+            
             pkteam2Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
+            innerimg2.src = badgeimg[selectedData.types[0].type.name];
 
+            if(selectedData.name.length > 15){
+                pkteam2Name.style.fontSize = "18px";
+                
+            }else if(selectedData.name.length > 22){
+                pkteam2Name.style.fontSize = "15px";
+                
+            }else if(selectedData.name.length > 10){
+                pkteam2Name.style.fontSize = "24px";
+                
+            }
+            pkteam2Name.textContent = selectedData.name.charAt(0).toUpperCase() + selectedData.name.slice(1);
             selectedPokemon[1] = selectedData;
 
             selectCheck()
@@ -476,9 +532,20 @@ async function fetchAdd(){
 
             pokeballname3.textContent = selectedData.name;
             pokeballname3.style.display = "block";
-            pkteam3Name.textContent = selectedData.name;
+            
             pkteam3Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
-
+            innerimg3.src = badgeimg[selectedData.types[0].type.name];
+            if(selectedData.name.length > 15){
+                pkteam3Name.style.fontSize = "18px";
+                
+            }else if(selectedData.name.length > 22){
+                pkteam3Name.style.fontSize = "15px";
+                
+            }else if(selectedData.name.length > 10){
+                pkteam3Name.style.fontSize = "24px";
+                
+            }
+            pkteam3Name.textContent = selectedData.name.charAt(0).toUpperCase() + selectedData.name.slice(1);
             addPokemon.disabled = true;
 
             selectedPokemon[2] = selectedData;
@@ -556,9 +623,20 @@ async function fetchAdd(){
 
             pokeballname4.textContent = selectedData.name;
             pokeballname4.style.display = "block";
-            pkteam4Name.textContent = selectedData.name;
+            
             pkteam4Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
-
+            innerimg4.src = badgeimg[selectedData.types[0].type.name];
+            if(selectedData.name.length > 15){
+                pkteam4Name.style.fontSize = "18px";
+                
+            }else if(selectedData.name.length > 22){
+                pkteam4Name.style.fontSize = "15px";
+                
+            }else if(selectedData.name.length > 10){
+                pkteam4Name.style.fontSize = "24px";
+                
+            }
+            pkteam4Name.textContent = selectedData.name.charAt(0).toUpperCase() + selectedData.name.slice(1);
             addPokemon.disabled = true;
 
             selectedPokemon[3] = selectedData;
@@ -636,9 +714,20 @@ async function fetchAdd(){
 
             pokeballname5.textContent = selectedData.name;
             pokeballname5.style.display = "block";
-            pkteam5Name.textContent = selectedData.name;
+            
             pkteam5Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
-
+            innerimg5.src = badgeimg[selectedData.types[0].type.name];
+            if(selectedData.name.length > 15){
+                pkteam5Name.style.fontSize = "18px";
+                
+            }else if(selectedData.name.length > 22){
+                pkteam5Name.style.fontSize = "15px";
+                
+            }else if(selectedData.name.length > 10){
+                pkteam5Name.style.fontSize = "24px";
+                
+            }
+            pkteam5Name.textContent = selectedData.name.charAt(0).toUpperCase() + selectedData.name.slice(1);
             addPokemon.disabled = true;
 
             selectedPokemon[4] = selectedData;
@@ -716,9 +805,19 @@ async function fetchAdd(){
 
             pokeballname6.textContent = selectedData.name;
             pokeballname6.style.display = "block";
-            pkteam6Name.textContent = selectedData.name;
             pkteam6Id.textContent = `#${String(selectedData.id).padStart(4, "0")}`;
-
+            innerimg6.src = badgeimg[selectedData.types[0].type.name];
+            if(selectedData.name.length > 15){
+                pkteam6Name.style.fontSize = "18px";
+                
+            }else if(selectedData.name.length > 22){
+                pkteam6Name.style.fontSize = "15px";
+                
+            }else if(selectedData.name.length > 10){
+                pkteam6Name.style.fontSize = "24px";
+                
+            }
+            pkteam6Name.textContent = selectedData.name.charAt(0).toUpperCase() + selectedData.name.slice(1);
             addPokemon.disabled = true;
 
             selectedPokemon[5] = selectedData;
@@ -1089,7 +1188,9 @@ function selectCheck(){
         box2btn.append(showTeam);
     }
 }
-
+backBtn.addEventListener("click",() => {
+    showmyTeam.style.display = "none";
+})
 showTeam.addEventListener("click",()=>{
     showmyTeam.style.display = "flex";
 })

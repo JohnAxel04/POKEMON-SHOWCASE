@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="mainStart" style="display: flex;">
+    <div id="mainStart" style="display: none;"> 
+        <!-- 1 -->
         <div id="mainStartdiv">
             <h1>Pokemon Vault</h1>
             <div id="mainP">
@@ -25,7 +26,7 @@
         </div> -->
         
     </div>
-    <div id="justscreen" style="display: block;"></div>
+    <div id="justscreen" style="display: none;"></div> <!-- 2 -->
     <div id="mypokemons" style="display: none;">
         <div id="mainHeader">
             <h3 id="texted1"></h3>
@@ -44,7 +45,15 @@
         </div>
         <!-- <button id="mainpkmBtn">qwerwqe</button> -->
     </div>
-
+    <div id="battlefield">
+        <div id="leftTeam">
+            <div class="leftsideClass" id="leftside1">pk 1</div>
+            <div class="leftsideClass" id="leftside2">pk 2</div>
+            <div class="leftsideClass" id="leftside3">pk 3</div>
+        </div>
+        <div id="centerTeam">1</div>
+        <div id="rightTeam">1</div>
+    </div>
     <div id="showmyTeam" style="display: none;">
         <div id="showPokemon">
             <div id="teamslot1" class="teamslot">
@@ -53,7 +62,7 @@
                     <p id="pkteam1Name" class="nameclass">Name</p>
                     <p id="pkteam1Id" class="idclass">ID</p>
                     
-                    <div id="pkteamimg1" class="imgclass"><img class="innerimgclass" src="badges/elec_badge-removebg-preview.png" alt=""></div>
+                    <div id="pkteamimg1" class="imgclass"><img class="innerimgclass" id="innerimg1" src="" alt=""></div>
                     
                 </div>
             </div>
@@ -62,7 +71,7 @@
                 <div class="teaminfo">
                     <p id="pkteam2Name" class="nameclass">Name</p>
                     <p id="pkteam2Id" class="idclass">ID</p>
-                    <div id="pkteamimg2" class="imgclass"><img class="innerimgclass" src="badges/elec_badge-removebg-preview.png" alt=""></div>
+                    <div id="pkteamimg2" class="imgclass"><img class="innerimgclass" id="innerimg2" src="" alt=""></div>
                 </div>
             </div>
             <div id="teamslot3" class="teamslot">
@@ -70,7 +79,7 @@
                 <div class="teaminfo">
                     <p id="pkteam3Name" class="nameclass">Name</p>
                     <p id="pkteam3Id" class="idclass">ID</p>
-                    <div id="pkteamimg3" class="imgclass"><img class="innerimgclass" src="badges/elec_badge-removebg-preview.png" alt=""></div>
+                    <div id="pkteamimg3" class="imgclass"><img class="innerimgclass" id="innerimg3" src="" alt=""></div>
                 </div>  
             </div>
             <div id="teamslot4" class="teamslot">
@@ -78,7 +87,7 @@
                 <div class="teaminfo">
                     <p id="pkteam4Name" class="nameclass">Name</p>
                     <p id="pkteam4Id" class="idclass">ID</p>
-                    <div id="pkteamimg4" class="imgclass"><img class="innerimgclass" src="badges/elec_badge-removebg-preview.png" alt=""></div>
+                    <div id="pkteamimg4" class="imgclass"><img class="innerimgclass" id="innerimg4" src="" alt=""></div>
                 </div>
             </div>
             <div id="teamslot5" class="teamslot">
@@ -86,7 +95,7 @@
                 <div class="teaminfo">
                     <p id="pkteam5Name" class="nameclass">Name</p>
                     <p id="pkteam5Id" class="idclass">ID</p>
-                    <div id="pkteamimg5" class="imgclass"><img class="innerimgclass" src="badges/elec_badge-removebg-preview.png" alt=""></div>
+                    <div id="pkteamimg5" class="imgclass"><img class="innerimgclass" id="innerimg5" src="" alt=""></div>
                 </div>
             </div>
             <div id="teamslot6" class="teamslot">
@@ -94,17 +103,17 @@
                 <div class="teaminfo">
                     <p id="pkteam6Name" class="nameclass">Name</p>
                     <p id="pkteam6Id" class="idclass">ID</p>
-                    <div id="pkteamimg6" class="imgclass"><img class="innerimgclass" src="badges/elec_badge-removebg-preview.png" alt=""></div>
+                    <div id="pkteamimg6" class="imgclass"><img class="innerimgclass" id="innerimg6" src="" alt=""></div>
                 </div>
             </div>
         </div>
         <div id="showbuttons">
-            <button>Back to Vault</button>
-            <button>Battle Pokemon</button>
+            <button id="backBtn">Back to Vault</button>
+            <button id="battleBtn">Battle Pokemon</button>
         </div>
     </div>
 
-    <div id="slant" style="display: flex;">
+    <div id="slant" style="display: none;"> <!-- 3 -->
         <div id="slatball">
             <div id="slanttop"></div>
             <div id="slantmid">
