@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="mainStart" style="display: flex;"> 
+    <div id="mainStart" style="display: none;"> 
         <!-- 1 -->
         <div id="mainStartdiv">
             <h1>Pokemon Vault</h1>
@@ -26,7 +26,7 @@
         </div> -->
         
     </div>
-    <div id="justscreen" style="display: block;"></div> <!-- 2 -->
+    <div id="justscreen" style="display: none;"></div> <!-- 2 -->
     <div id="mypokemons" style="display: none;">
         <div id="mainHeader">
             <h3 id="texted1"></h3>
@@ -45,14 +45,32 @@
         </div>
         <!-- <button id="mainpkmBtn">qwerwqe</button> -->
     </div>
-    <div id="battlefield" style="display: none;">
+    <div id="battlefield" style="display: flex;">
         <div id="leftTeam">
+            <div id="lefthr">
+                <hr>
+                <hr>
+                <hr>
+            </div>
             <div class="leftsideClass" id="leftside1">pk 1</div>
             <div class="leftsideClass" id="leftside2">pk 2</div>
             <div class="leftsideClass" id="leftside3">pk 3</div>
         </div>
-        <div id="centerTeam">1</div>
-        <div id="rightTeam">1</div>
+        <div id="centerTeam">
+            <button id="startbtn1" class="startbattlebtn">Start Battle 1</button>
+            <button id="startbtn2" class="startbattlebtn">Start Battle 2</button>
+            <button id="startbtn3" class="startbattlebtn">Start Battle 3</button>
+        </div>
+        <div id="rightTeam">
+            <div id="righthr">
+                <hr>
+                <hr>
+                <hr>
+            </div>
+            <div class="rightsideClass" id="rightside1">pk 4</div>
+            <div class="rightsideClass" id="rightside2">pk 5</div>
+            <div class="rightsideClass" id="rightside3">pk 6</div>
+        </div>
     </div>
     <div id="showmyTeam" style="display: none;">
         <div id="showPokemon">
@@ -113,7 +131,7 @@
         </div>
     </div>
 
-    <div id="slant" style="display: flex;"> <!-- 3 -->
+    <div id="slant" style="display: none;"> <!-- 3 -->
         <div id="slatball">
             <div id="slanttop"></div>
             <div id="slantmid">
